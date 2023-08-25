@@ -22,6 +22,25 @@ void printf(const char *fmt, ...) {
                     }
                     break;
                 }
+                case 'd': {
+                    int value = va_arg(vargs, int);
+                    if (value < 0) {
+                        putchar('-');
+                        value = -value;
+                    }
+
+                    int devisor = 1;
+                    while (value / devisor > 9)
+                        devisor *= 10;
+                    
+                    while (devisor > 0) {
+                        putchar('0' + value / devisor);
+                        value %= devisor;
+                        devisor /= 10;
+                    }
+                    
+                    break;
+                }
             }
         } else {
             putchar(*fmt);
