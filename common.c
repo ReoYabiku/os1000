@@ -41,6 +41,13 @@ void printf(const char *fmt, ...) {
                     
                     break;
                 }
+                case 'x': {
+                    int value = va_arg(vargs, int);
+                    for (int i = 7; i >= 0; i--) {
+                        int nibble = (value >> (i * 4)) & 0xf;
+                        putchar("0123456789abcdef"[nibble]);
+                    }
+                }
             }
         } else {
             putchar(*fmt);
