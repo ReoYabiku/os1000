@@ -22,7 +22,7 @@ char *strcpy(char *dst, const char *src) {
     while (*src)
         *d++ = *src++;
     d* = '\0';
-    return dst
+    return dst;
 }
 
 void printf(const char *fmt, ...) {
