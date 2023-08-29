@@ -31,7 +31,20 @@ void putchar (char ch) {
 void kernel_main(void) {
     printf("\n\nHello, %s\n", "World!");
     printf("1 + 2 = %d\n", 3);
-    printf("sample x : %x", 123);
+    printf("sample x : %x\n", 123);
+
+    // memset
+    char *buf = "1234567890";
+    char c = 'a';
+    size_t n = 10;
+    buf = memset(buf, c, n);
+    printf("buf: %s", buf);
+
+    // memcpy
+
+    // strcpy
+
+    // strcmp
 
     for(;;) {
         __asm__ volatile("wfi");
