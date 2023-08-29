@@ -9,6 +9,14 @@ void *memset(void *buf, char c, size_t n) {
     return buf;
 }
 
+void *memcpy(void *dst, const void *src, size_t n) {
+    uint8_t *d = (uint8_t *) dst;
+    const uint8_t *s = (uint8_t *) src;
+    while (n--)
+        *d++ = *s++;
+    return dst;
+}
+
 void printf(const char *fmt, ...) {
     va_list vargs;
     va_start(vargs, fmt);
