@@ -2,6 +2,13 @@
 
 void putchar(char ch);
 
+void *memset(void *buf, char c, size_t n) {
+    uint8_t *p = (uint8_t *) buf;
+    while (n--)
+        *p++ = c;
+    return buf;
+}
+
 void printf(const char *fmt, ...) {
     va_list vargs;
     va_start(vargs, fmt);
