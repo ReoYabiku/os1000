@@ -38,13 +38,16 @@ void kernel_main(void) {
     char c = 'a';
     size_t n = 10;
     buf = memset(buf, c, n);
-    printf("buf: %s", buf);
+    printf("buf: %s\n", buf);
 
     // memcpy
 
     // strcpy
 
     // strcmp
+
+    PANIC("panic!");
+    printf("unreachable here!");
 
     for(;;) {
         __asm__ volatile("wfi");
